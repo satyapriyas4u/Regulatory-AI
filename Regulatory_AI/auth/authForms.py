@@ -2,7 +2,7 @@ import reflex as rx
 import reflex_local_auth
 from reflex_local_auth.pages.components import input_100w, MIN_WIDTH
 
-from auth.authState import MyRegisterState
+from ..auth.authState import MyRegisterState
 
 def register_error() -> rx.Component:
     """Render the registration error message."""

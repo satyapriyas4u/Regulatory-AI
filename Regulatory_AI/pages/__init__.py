@@ -1,7 +1,7 @@
-from pages.about import about_page
-from pages.design import design_page
-from pages.home import home_page
-from pages.contact import contact_page
+from .about import about_page
+from .design import design_page
+from .home import home_page
+from .contact import contact_page
 
 
 __all__ = [ 

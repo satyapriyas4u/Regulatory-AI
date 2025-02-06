@@ -1,7 +1,9 @@
+# Regulatory_AI/pages/about.py
+
 import reflex as rx 
 
-from components.base import base_page
-from template import template
+from ..components.base import base_page
+from ..templates.template import template
 
 @rx.page()
 @template

@@ -1,23 +1,28 @@
+# Regulatory_AI/Regulatory_AI.py
+
 """Welcome to Reflex! This file outlines the steps to create a basic app."""
 
 import reflex as rx
-import reflex_local_auth
+# import reflex_local_auth
 
 from rxconfig import config
-from auth.authState import SessionState
-from components.base import base_page
+# from .auth.authState import SessionState
+from .components.base import base_page
 
 
-from .auth.authPages import (
-    my_login_page,
-    my_register_page,
-    my_logout_page,
+# from .auth.authPages import (
+#     my_login_page,
+#     my_register_page,
+#     my_logout_page,
+# )
+
+from . import (
+    routes, 
+    # pages,
 )
 
-from . import routes, pages
 
-
-
+@rx.page(route=routes.routes.HOME_ROUTE,title="Regulatory AI")
 def index() -> rx.Component:
     # Welcome Page (Index)
     return rx.container(
@@ -40,13 +45,13 @@ def index() -> rx.Component:
         ),
     )
 
-def index() -> rx.Component:
-    return base_page(
-        rx.cond(SessionState.is_authenticated,
-            # pages.dashboard_component(),
-            # pages.landing_component(),
-        )
-    )
+# def index() -> rx.Component:
+#     return base_page(
+#         # rx.cond(SessionState.is_authenticated,
+#         #     pages.dashboard_component(),
+#         #     pages.landing_component(),
+#         # ),
+#     )
 app = rx.App(
     theme=rx.theme(
         appearance="dark", 
@@ -58,47 +63,48 @@ app = rx.App(
     )
 )
 
-app.add_page(
-    pages.home_page, 
-    route=routes.routes.HOME_ROUTE, 
-    title="Regulatory AI"
-)
 
-app.add_page(
-    pages.design_page, 
-    route=routes.routes.HOME_ROUTE, 
-    title="Regulatory AI"
-)
+# app.add_page(
+#     pages.home_page, 
+#     route=routes.routes.HOME_ROUTE, 
+#     title="Regulatory AI"
+# )
 
-# reflex_local_auth pages
-app.add_page(
-    my_login_page,
-    route=reflex_local_auth.routes.LOGIN_ROUTE,
-    title="Login",
-)
-app.add_page(
-    my_register_page,
-    route=reflex_local_auth.routes.REGISTER_ROUTE,
-    title="SignUp",
-)
+# app.add_page(
+#     pages.design_page, 
+#     route=routes.routes.HOME_ROUTE, 
+#     title="Regulatory AI"
+# )
 
-app.add_page(
-    my_logout_page,
-    route=routes.routes.LOGOUT_ROUTE,
-    title="Logout",
-)
+# # reflex_local_auth pages
+# app.add_page(
+#     my_login_page,
+#     route=reflex_local_auth.routes.LOGIN_ROUTE,
+#     title="Login",
+# )
+# app.add_page(
+#     my_register_page,
+#     route=reflex_local_auth.routes.REGISTER_ROUTE,
+#     title="SignUp",
+# )
 
-# my pages
-app.add_page(
-    pages.about_page, 
-    route=routes.routes.ABOUT_US_ROUTE,
-    title="About Us"
-)
+# app.add_page(
+#     my_logout_page,
+#     route=routes.routes.LOGOUT_ROUTE,
+#     title="Logout",
+# )
+
+# # my pages
+# app.add_page(
+#     pages.about_page, 
+#     route=routes.routes.ABOUT_US_ROUTE,
+#     title="About Us"
+# )
 
 
-app.add_page(
-    pages.contact_page,
-    route=routes.routes.CONTACT_US_ROUTE,
-    title="Contact Us"
-)
+# app.add_page(
+#     pages.contact_page,
+#     route=routes.routes.CONTACT_US_ROUTE,
+#     title="Contact Us"
+# )
 

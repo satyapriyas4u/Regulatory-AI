@@ -1,8 +1,8 @@
 # pages/design.py
 
 import reflex as rx
-from state import QueryState
-from template import template
+from Regulatory_AI.states.state import QueryState
+from Regulatory_AI.templates.template import template
 
 @rx.page()
 @template

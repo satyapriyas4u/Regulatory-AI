@@ -6,7 +6,7 @@ from reflex_local_auth.user import LocalUser
 import sqlalchemy
 from sqlmodel import Field, Relationship
 
-from . import utils
+from .. import utils
 
 class UserInfo(rx.Model, table=True):
     email: str

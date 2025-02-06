@@ -3,11 +3,11 @@ import reflex as rx
 from reflex_local_auth.pages.login import LoginState, login_form
 from reflex_local_auth.pages.registration import RegistrationState, register_form
 
-from .. import navigation
-from components.base import base_page
+from ..routes import routes
+from ..components.base import base_page
 
-from auth.authForms import my_register_form
-from auth.authState import SessionState
+from ..auth.authForms import my_register_form
+from ..auth.authState import SessionState
 
 def my_login_page()->rx.Component:
     return base_page(
@@ -44,7 +44,7 @@ def my_logout_page() -> rx.Component:
             rx.heading("Are you sure you want logout?", size="7"),
             rx.link(
                 rx.button("No", color_scheme="gray"),
-                href=navigation.routes.HOME_ROUTE
+                href=routes.routes.HOME_ROUTE
             ),
             rx.button("Yes, please logout", on_click=SessionState.perform_logout),
             spacing="5",

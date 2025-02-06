@@ -1,7 +1,7 @@
-# 
+# Regulatory-AI/Regulatory_AI/routes/__init__.py
 
-from routes import routes
-from routes.navState import NavState
+from . import routes
+from .navState import NavState
 
 
 __all__ = [

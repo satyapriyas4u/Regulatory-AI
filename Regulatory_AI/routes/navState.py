@@ -1,6 +1,6 @@
 import reflex as rx
 import reflex_local_auth
-from routes.routes import routes
+from . import routes
 
 class NavState(rx.State):
     def to_home(self):
