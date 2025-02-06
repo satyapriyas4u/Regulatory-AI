@@ -1,0 +1,6 @@
+HOME_ROUTE="/"
+DESIGN_ROUTE="/design"
+ABOUT_US_ROUTE="/about"
+CONTACT_US_ROUTE="/contact"
+LOGIN_ROUTE="/login"
+LOGOUT_ROUTE="/logout"

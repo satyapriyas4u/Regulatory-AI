@@ -1,0 +1,10 @@
+[project]
+name = "regulatory-ai"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "reflex>=0.6.8",
+    "reflex-local-auth>=0.2.2",
+]
