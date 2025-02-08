@@ -5,8 +5,12 @@ import reflex as rx
 from ..components.base import base_page
 from ..templates.template import template
 
-@rx.page()
-@template
+from ..routes import (
+    routes, 
+)
+
+# @rx.page(route=routes.ABOUT_US_ROUTE, title="Regulatory AI")
+# @template
 def about_page() -> rx.Component:
     child = rx.vstack(
             rx.heading("About Us", size="9"),

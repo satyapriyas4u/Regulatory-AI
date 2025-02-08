@@ -1,3 +1,5 @@
+# Regulatory_AI/templates/template.py
+
 from collections.abc import Callable
 import reflex as rx
 from ..components.base import base_page

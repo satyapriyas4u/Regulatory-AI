@@ -1,11 +1,14 @@
 import reflex as rx
 
+from ..routes import (
+    routes, 
+    # pages,
+)
 
 def navbar_link(text: str, url: str) -> rx.Component:
     return rx.link(
-        rx.text(text, size="4", weight="medium"), href=url
+        rx.text(text, size="6", weight="medium"), href=url
     )
-
 
 def navbar() -> rx.Component:
     return rx.box(
@@ -16,27 +19,36 @@ def navbar() -> rx.Component:
                         src="/logo.jpg",
                         width="2.25em",
                         height="auto",
-                        border_radius="25%",
+                        border_radius="35%",
                     ),
                     rx.heading(
-                        "Reflex", size="7", weight="bold"
+                        "Regulatory AI", size="8", weight="bold"
                     ),
                     align_items="center",
+                    spacing="4",
                 ),
                 rx.hstack(
-                    navbar_link("Home", "/#"),
-                    navbar_link("About", "/#"),
-                    navbar_link("Pricing", "/#"),
-                    navbar_link("Contact", "/#"),
-                    spacing="5",
+                    navbar_link("Home", routes.HOME_ROUTE),
+                    navbar_link("Design", routes.DESIGN_ROUTE),
+                    navbar_link("About", routes.ABOUT_US_ROUTE),
+                    navbar_link("Contact", routes.CONTACT_US_ROUTE),
+                    spacing="6",
+                ),
+                rx.hstack(
+                    rx.color_mode.button(size="2", variant="soft"),
+                    spacing="4",
+                    justify="end",
                 ),
                 rx.hstack(
                     rx.button(
-                        "Sign Up",
-                        size="3",
+                        "Register",
+                        size="4",
                         variant="outline",
                     ),
-                    rx.button("Log In", size="3"),
+                    rx.button(
+                        "Log In", 
+                        size="4"
+                    ),
                     spacing="4",
                     justify="end",
                 ),

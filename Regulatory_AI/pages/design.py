@@ -4,16 +4,22 @@ import reflex as rx
 from Regulatory_AI.states.state import QueryState
 from Regulatory_AI.templates.template import template
 
-@rx.page()
+from ..routes import (
+    routes, 
+)
+
+@rx.page(route=routes.DESIGN_ROUTE, title="Design")
 @template
 def design_page() -> rx.Component:
-    return rx.container(
+    child = rx.box(
         rx.vstack(
             # 1) Top section: Main heading
             rx.container(
                 rx.heading("Design Input File", size="9"),
                 width="100%",
+                align="center",
                 padding="0.5em",
+        
             ),
             # 2) Middle section: Two columns (Select Category & Response)
             rx.hstack(
@@ -77,3 +83,4 @@ def design_page() -> rx.Component:
         width="100%",
         padding="0.5em",
     )
+    return child

@@ -3,8 +3,12 @@ import reflex as rx
 from Regulatory_AI.components.base import base_page
 from Regulatory_AI.templates.template import template
 
-@rx.page()
-@template
+from ..routes import (
+    routes, 
+)
+
+# @rx.page(route=routes.CONTACT_US_ROUTE, title="Regulatory AI")
+# @template
 def contact_page() -> rx.Component:
     child = rx.vstack(
             rx.heading("About Us", size="9"),

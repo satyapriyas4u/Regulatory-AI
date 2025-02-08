@@ -25,8 +25,8 @@ class QueryState(rx.State):
 
         payload = {
             "category": self.category,
-            "test": self.test_type,
-            "query_text": self.query_text
+            "test_type": self.test_type,
+            "query": self.query_text
         }
 
         try:
