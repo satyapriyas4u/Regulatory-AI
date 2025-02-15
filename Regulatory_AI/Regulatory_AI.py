@@ -11,8 +11,6 @@ from .components.base import base_page
 from Regulatory_AI.templates.template import template
 
 
-
-
 # from .auth.authPages import (
 #     my_login_page,
 #     my_register_page,

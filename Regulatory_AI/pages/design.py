@@ -1,8 +1,8 @@
 # pages/design.py
 
 import reflex as rx
-from Regulatory_AI.states.state import QueryState
-from Regulatory_AI.templates.template import template
+from ..states.state import QueryState
+from ..templates.template import template
 
 from ..routes import (
     routes, 
@@ -28,7 +28,7 @@ def design_page() -> rx.Component:
                     rx.vstack(
                         rx.heading("Select Category", size="7"),
                         rx.select(
-                            ["knee"],
+                            ["Knee System", "Hip System",],
                             placeholder="Select Category",
                             on_change=QueryState.set_category,
                             width="100%",
@@ -42,8 +42,9 @@ def design_page() -> rx.Component:
                                 "Dimensions",
                                 "Labelling",
                                 "Sterilization",
-                                "Surface_Roughness",
-                                "Packaging_and_Shipping",
+                                "Surface Roughness",
+                                "Packaging and Shipping",
+                                "Wear Test",
                             ],
                             placeholder="Select Test Type",
                             on_change=QueryState.set_test_type,
